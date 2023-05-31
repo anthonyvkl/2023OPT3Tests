@@ -34,6 +34,12 @@ public class BerekeningTest {
     }
 
     @Test
+    void prijsLanden1000kgTest() {
+        Berekening berekening2 = new Berekening();
+        assertEquals(500, berekening2.prijsLanden(1000));
+    }
+
+    @Test
     void prijsLanden1001kgTest() {
        Berekening berekening2 = new Berekening();
        assertEquals(500, berekening2.prijsLanden(1001));
@@ -63,12 +69,6 @@ public class BerekeningTest {
        assertEquals(2500, berekening2.prijsLanden(5050));
     }
 
-    @Test
-    void prijsLanden9000kgTest() {
-       Berekening berekening2 = new Berekening();
-       assertEquals(2500, berekening2.prijsLanden(9000));
-    }
-
     // Pairwise Testing
 
     @Test
@@ -86,19 +86,19 @@ public class BerekeningTest {
     @Test
     void prijsInclusiefFactoren3000kgTest1() {
        Berekening berekening3 = new Berekening();
-       assertEquals(1573.0,berekening3.prijsInclusiefFactoren(3000,1,true,true));
+       assertEquals(1300.0,berekening3.prijsInclusiefFactoren(3000,1,true,false));
     }
 
     @Test
     void prijsInclusiefFactoren3000kgTest2() {
        Berekening berekening3 = new Berekening();
-       assertEquals(750.0,berekening3.prijsInclusiefFactoren(3000,5,false,false));
+       assertEquals(907.5,berekening3.prijsInclusiefFactoren(3000,5,false,true));
     }
 
     @Test
     void prijsInclusiefFactoren7000kgTest1() {
        Berekening berekening3 = new Berekening();
-       assertEquals(3993.0,berekening3.prijsInclusiefFactoren(7000,1,true,true));
+       assertEquals(3025.0,berekening3.prijsInclusiefFactoren(7000,1,false,true));
     }
 
     @Test
